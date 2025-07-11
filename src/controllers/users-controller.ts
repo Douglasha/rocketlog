@@ -19,7 +19,7 @@ class UsersController {
     })
 
     if (userWithSameEmail) {
-      throw new AppError("This email is already in use.", 201)
+      throw new AppError("This email is already in use.")
     }
 
     const hashedPassword = await hash(password, 8)
