@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "tsx watch --env-file .env src/server.ts",
     "test:dev": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --watchAll --runInBand",
-    "build": "tsup src --out-dir build"
+    "build": "tsup src --out-dir build",
+    "start": "node build/server.js"
   },
   "license": "ISC",
   "author": "Douglas Amaral",
