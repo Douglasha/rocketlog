@@ -5,6 +5,10 @@ import { app } from "@/app"
 describe("SessionsController", () => {
   let user_id: string
 
+  afterAll(async () => {
+    await prisma.user.delete({ where: { id: user_id}})
+  })
+
   it("should authenticate a and get acces token", async () => {
       const userResponse = await request(app).post("/users").send({
         name: "Test User2",
